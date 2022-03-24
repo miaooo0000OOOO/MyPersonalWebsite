@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title%}
+Miaooo的图书馆
+{% endblock %}
+
+{% block head%}
+{% endblock %}
+
+{% block body%}
+    <div style="margin-left:40px;margin-top:40px;">
+        <h4>书籍为乱码请下载下来使用gbk格式打开</h4>
+    </div>
+    {% for books_row in books %}
+        <div class="row" style="padding-bottom:10px;padding-top:20px;">
+            {% for book in books_row %}
+            <div class="col">
+                <div class="book_lg_container">
+                    {% if book.cover%}
+                    <div class="recommend_books_lg" data-status="0">
+                        <a href=" {{ url_for('static', filename="books/"+book.name) }} " target="_blank">
+                                <img class="recommend_books_lg" src={{ url_for('static',filename=book.cover) }}>
+                        </a>
+                    </div>
+                    {% else %}
+                    <div class="recommend_books_lg" data-status="0" style="padding-top:30%;background-color:#ccccff">
+                            <a href=" {{ url_for('static', filename="books/"+book.name) }} " target="_blank" style="color:black">
+                                <h2>{{ book.name}} </h2>
+                                <p>(这本书没有封面)</p>
+                            </a> 
+                    </div>
+                    {% endif %}
+                    <div class="book_des_container">
+                        <div class="book_name big_book_name">
+                            <a href=" {{ url_for('static', filename="books/"+book.name) }} " target="_blank">
+                                {{ book.name }}
+                            </a>
+                        </div>
+                        <div>
+                            <div>
+                                <span class="book_author">作者：</span>
+                                <span class="book_author_detail"> 
+                                    {{ book.author }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+
+
+
