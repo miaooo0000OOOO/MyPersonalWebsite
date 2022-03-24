@@ -39,6 +39,7 @@
 - 使用
 
     static/books 图书目录
+    
     static/img 图书封面（代码还没写）
     
     先运行nginx
