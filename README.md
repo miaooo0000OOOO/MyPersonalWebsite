@@ -23,23 +23,21 @@
     mysql
 
 2. 配置conda环境
-
-    <code>
+```
     conda create -n web_env
 
     conda activate web_env
 
     conda install uwsgi # 很重要
-    </code>
-
-    其他哪个报错就装哪个包（使用pip install 包名）
+```
+其他哪个报错就装哪个包（使用pip install 包名）
 
 3. 修改uwsgi.ini，config.py
 
 - 使用
 
     static/books 图书目录
-    
+
     static/img 图书封面（代码还没写）
     
     先运行nginx
